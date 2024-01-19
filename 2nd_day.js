@@ -2,7 +2,6 @@
 
 // Create an array of objects, each representing a person with properties like name, age, and gender. Write a function to filter out all females and then map the remaining people to an array of names. Print the final result.
 
-// Define an array of objects representing people
 const people = [
   { name: "Mazharul", age: 23, gender: "male" },
   { name: "Marufa", age: 17, gender: "female" },

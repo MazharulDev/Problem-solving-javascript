@@ -1,4 +1,4 @@
-// ================ problem 5 =======================
+// ================ problem 6 =======================
 
 // Create an array of objects, each representing a person with properties like name, age, and gender. Write a function to filter out all females and then map the remaining people to an array of names. Print the final result.
 
@@ -20,7 +20,7 @@ const femaleFilterResult = filterAndMapFemales(people);
 
 // console.log(femaleFilterResult);
 
-// ================ problem 6 =======================
+// ================ problem 7 =======================
 
 // Task: Object Manipulation
 // Create an array of objects representing books with properties like title, author, and year. Write a function that takes the array and returns a new array with only the book titles. Print the result.
@@ -41,7 +41,7 @@ const bookTitles = extractBookTitles(books);
 
 // console.log(bookTitles);
 
-// ================ problem 7 =======================
+// ================ problem 8 =======================
 
 // Task: Function Composition
 // Write three functions: one to square a number, one to double a number, and one to add 5 to a number. Compose these functions to create a new function that squares a number, doubles the result, and then adds 5.
@@ -70,7 +70,7 @@ const squareDoubleAddFive = (x) => {
 const result = squareDoubleAddFive(3);
 // console.log(result);
 
-// ================ problem 8 =======================
+// ================ problem 9 =======================
 
 // Task: Sorting Objects
 // Create an array of objects representing cars with properties like make, model, and year. Write a function to sort the array of cars by the year of manufacture in ascending order. Print the sorted array.
@@ -92,38 +92,29 @@ const sortedCars = sortByYearAscending(cars);
 
 // console.log(sortedCars);
 
-// ================ problem 9 =======================
+// ================ problem 10 =======================
 
 // Task: Find and Modify
 // Write a function that searches an array of objects for a specific person by name. If found, modify their age property. Print the updated array.
 
-// Array of person objects
-let peoples = [
-  { name: "Alice", age: 25 },
-  { name: "Bob", age: 30 },
-  { name: "Charlie", age: 22 },
-];
+const updatePersonAge = (people, nameToFind, newAge) => {
+  const foundPerson = people.find((person) => person.name === nameToFind);
 
-// Function to search and modify age by name
-const updateAgeByName = (peopleArray, targetName, newAge) => {
-  for (let i = 0; i < peopleArray.length; i++) {
-    if (peopleArray[i].name === targetName) {
-      peopleArray[i].age = newAge;
-      return true;
-    }
+  if (foundPerson) {
+    foundPerson.age = newAge;
+    console.log("Person's age updated successfully.");
+  } else {
+    console.log("Person not found in the array.");
   }
-  return false;
+
+  return people;
 };
 
-const targetName = "Bob";
-const newAge = 35;
+const peoples = [
+  { name: "Mazharul", age: 30 },
+  { name: "Faisal", age: 25 },
+  { name: "Habib", age: 40 },
+];
 
-// Check if the person is found and update age
-if (updateAgeByName(peoples, targetName, newAge)) {
-  console.log("Age updated for", targetName);
-} else {
-  console.log(targetName, "not found in the array");
-}
-
-// Print the updated array
-console.log(peoples);
+const updatedPeople = updatePersonAge(people, "Faisal", 35);
+console.log(updatedPeople);
